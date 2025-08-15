@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <style>
+	  table{
+	  margin: 15px 20px 20px 100px;
+	  border: 1px solid;
+	  width:80%;
+		  
+	  }
+	  table,td,th{
+	  border: 1px solid;	    
+	  }
+	  td {
+ 		 height: 25px;
+  		 vertical-align: bottom;
+		}
+		th{
+	  text-align: center;	    
+	  }
+	  td{
+	  text-align: center;	    
+	  }
+  </style>
+  </head>
+  <body>
+    <h1 th:text="${msg}"></h1>
+    <div>
+		<table>
+			<thead>
+			<th nowrap>Sequence No</th>
+			<th>Name</th>
+			<th>Train No</th>
+			<th>Email</th>
+			<th>From</th>
+			<th>To</th>
+			</thead>
+			<tbody>
+			 <tr th:each="ticket : ${tickets}">
+                    <td width=35 th:text="${ticket.seqNo}"></td>
+                    <td th:text="${ticket.name}"></td>
+                    <td th:text="${ticket.trainNo}"></td>
+                    <td th:text="${ticket.email}"></td>
+                    <td th:text="${ticket.fromPlace}"></td>
+                    <td th:text="${ticket.toPlace}"></td>
+             </tr>
+    	</tbody>	
+		</table>
+	</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
